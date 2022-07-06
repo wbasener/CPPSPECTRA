@@ -24,8 +24,8 @@ settingsValues createSettings(char** argv,const std::string hsi_data_path) {
   settings.nPCs = -1;
   settings.localWindowRadius = 25;
 
-  // Read the config file (ninja_config.csv) and use any settings from there
-  std::string configPath = std::filesystem::path(argv[0]).replace_filename("ninja_config.csv").string();
+  // Read the config file (cppspectra_config.csv) and use any settings from there
+  std::string configPath = std::filesystem::path(argv[0]).replace_filename("cppspectra_config.csv").string();
   std::string key, val;
   std::ifstream fileIn;
   fileIn.open(configPath);

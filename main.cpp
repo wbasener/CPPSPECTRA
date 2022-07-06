@@ -4,7 +4,6 @@
 #include "settings.h"
 #include "write_log_file.h"
 #include "atm_comp.h"
-#include "material_id.h"
 
 using namespace hsi;
 using hsi::HSIData;
@@ -121,51 +120,6 @@ int main(int argc, char** argv) {
   // Output results to a subdirectory called \output
   timeTracking = timeCheckStart("Save ACE images", settings);
   showACEResults(Im, lib_tgt, ACE, settings);
-  timeCheckEnd(timeTracking, settings);
-
-  // Get the file names for the identificaiton library and header
-  // from user input or use a default
-  timeTracking = timeCheckStart("Read identification spectral libary", settings); 
-  const std::string id_lib_data_path = getIdLibDataFname(hsi_data_path);
-  const std::string id_lib_header_path = getIdLibHeaderFname(hsi_data_path);
-  Logger("Identificaiton library file: "+id_lib_data_path,settings, 0);
-
-  // Determine the metadata from the header file
-  HSIDataOptions id_lib_data_options(id_lib_data_path);
-  id_lib_data_options.ReadHeaderFromFile(id_lib_header_path);
-  hsi::HSIDataRange id_lib_data_range = getDataRange(id_lib_data_options);
-
-  // Read the library data.
-  Logger("Reading Identification Spectral library.", settings);
-  HSIDataReader id_lib_reader(id_lib_data_options);  
-  id_lib_reader.ReadData(id_lib_data_range);
-  const hsi::HSIData& id_lib_data = id_lib_reader.GetData();
-  LoggerPrintHeaderInfo(id_lib_data_options, settings);
-  timeCheckEnd(timeTracking, settings);
-
-  // Create eigen array of library from the data. 
-  timeTracking = timeCheckStart("Converting identificaiton library data to Eigen data", settings); 
-  LibData lib_id_fullres = SpecLibData2EigenData(id_lib_data, id_lib_data_options, settings);
-  timeCheckEnd(timeTracking, settings);
-
-  // Resampling identificaiton library to image wavelengths. 
-  timeTracking = timeCheckStart("Resampling identificaiton library to image wavelengths", settings); 
-  LibData lib_id = resampleLibrary(lib_id_fullres, Im, settings);
-  timeCheckEnd(timeTracking, settings);
-
-  // Whiten identificaiton library. 
-  timeTracking = timeCheckStart("Whiten the identificaiton library", settings);
-  lib_id.spectraWhite = computeWhitenedLibrary(lib_id, stats, settings);
-  timeCheckEnd(timeTracking, settings);  
-
-  // Grow the ROIs
-  timeTracking = timeCheckStart("Grow the ROIs", settings);
-  std::vector<IDstruct> ID = growROIs(Im, ACEmax1d, settings);
-  timeCheckEnd(timeTracking, settings);
-
-  // Material identificaiton on the ROIs
-  timeTracking = timeCheckStart("Identify the ROIs", settings);
-  ID = identifyROIs(Im, stats, ID, lib_tgt, lib_id, ACEmax1d, settings);
   timeCheckEnd(timeTracking, settings);
   
   // Tally and output the total runtime
