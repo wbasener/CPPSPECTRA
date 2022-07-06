@@ -1,7 +1,9 @@
 # CPPSPECTRA
 C++ code for reading hyperspectral images and libraries, whitening data, and target detection.
 
-Running works by compiling the main file and typing main <hyperspectral_filename> in the command line resulting in output to the command line, with results written to a created subfoleder called output with RGB, RX andomaly, and ACE target detection images.  For example:
+
+
+Running works by compiling the main file and typing main <hyperspectral_filename> in the command line resulting in output to the command line, with results written to a created subfoleder called output with RGB, RX andomaly, and ACE target detection images.  Variable values are written to a python file that can be read and reviewed in the included jupyter notebook.  For example:
 
 \Documents\GitHub\CPPSPECTRA>.\main AVIRIS <br />
 Processing Image: AVIRIS<br />
