@@ -1,0 +1,11 @@
+﻿Verbose,4
+displayRGB,0
+saveRGB,1
+displayRX,0
+saveRX,1
+displayACE,0
+saveACE,1
+atmComp,0
+aceThresh,0.5
+minROIsize,2
+nPCs,-1
