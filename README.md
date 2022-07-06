@@ -29,7 +29,7 @@ Log Filename: output\log.txt
    Bad Bands List = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
    Full Width Half Max = {  9.852108,  9.796976,  9.744104,  9.69...===
 ===Reading header completed in 0.002000s===
-===Reading image...===
+===Reading image...=== 
 ===Reading image completed in 3.418000s===
 ===Converting HSIDATA image data to Eigen matrix...===
 ===Wavelengths: 365.929810, 375.593994, 385.262512, 394.935486, 404.612915, ...===
