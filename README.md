@@ -3,7 +3,7 @@ C++ code for reading hyperspectral images and libraries, whitening data, and tar
 
 Running works by compiling the main file and typing main <hyperspectral_filename> in the command line, for example:
 
-\Documents\GitHub\CPPSPECTRA>.\main AVIRIS
+\Documents\GitHub\CPPSPECTRA>.\main AVIRIS \n
 Processing Image: AVIRIS
 Log Filename: output\log.txt
 ===Settings:
