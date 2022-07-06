@@ -4,19 +4,33 @@ C++ code for reading hyperspectral images and libraries, whitening data, and tar
 Running works by compiling the main file and typing main <hyperspectral_filename> in the command line, for example:
 
 \Documents\GitHub\CPPSPECTRA>.\main AVIRIS
+
 Processing Image: AVIRIS
+
 Log Filename: output\log.txt
+
 ===Settings:
+
    verbose = 4
+   
    imagePath = AVIRIS
+   
    loggerPath = output\log.txt
+   
    outDir = output
+   
    displayRX = 0
+   
    saveRX = 1
+   
    displayACE = 0
+   
    saveACE = 1===
+   
 ===Number of Eigen Threads: 16===
+
 ===Reading header...===
+
 ===Information in Header:
    Interleave Format = bsq
    Datatype = 4 (4=float, 5=double, etc.)
