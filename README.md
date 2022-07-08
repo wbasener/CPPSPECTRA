@@ -1,5 +1,5 @@
 # CPPSPECTRA
-C++ code for reading hyperspectral images and libraries, whitening data, and target detection. (Requires Eigen and OpenCV packages.)
+C++ code for reading hyperspectral images and libraries, whitening data, and target detection. (Requires Eigen and OpenCV packages.) 
 
 <p float="left">
    <img src="https://github.com/wbasener/CPPSPECTRA/blob/main/output/RGB.jpg" alt="drawing" width="300"/>
