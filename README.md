@@ -1,4 +1,4 @@
-# CPPSPECTRA
+# CPPSPECTRA  [![DOI](https://zenodo.org/badge/511201917.svg)](https://zenodo.org/badge/latestdoi/511201917)
 C++ code for reading hyperspectral images and libraries, whitening data, and target detection. (Requires Eigen and OpenCV packages, and includes modified versions of hsi_data_reader.cpp and hsi_data_reader.h from https://github.com/rteammco/hsi-data-reader by Richard Teammco.) 
 
 <p float="left">
